@@ -45,6 +45,12 @@ As long as you have Docker desktop running you can run the following command to 
 
 `docker run -it -p8080:8080 content-calendar:0.0.1-SNAPSHOT`
 
+With postgres connection run:
+```bash
+docker run -it --network content-calendar_default -p 8080:8080 -e SPRING.DATASOURCE.URL=jdbc:postg
+resql://postgres:5432/content_calendar content-calendar:0.0.1-SNAPSHOT
+```
+
 To learn more about Packaging OCI Images check out the [documentation](https://docs.spring.io/spring-boot/docs/3.0.1/maven-plugin/reference/htmlsingle/#build-image).
 
 ## Native Images
